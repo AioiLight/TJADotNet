@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Chip.cs" />
+    <Compile Include="Format\Branches.cs" />
     <Compile Include="Format\Chips.cs" />
     <Compile Include="Format\Notes.cs" />
     <Compile Include="Format\SENotes.cs" />
