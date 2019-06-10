@@ -64,10 +64,6 @@ namespace TJADotNet
         /// </summary>
         public int Life { get; set; }
         /// <summary>
-        /// 太鼓譜面・指譜面。
-        /// </summary>
-        public Games Game { get; set; }
-        /// <summary>
         /// 背景画像。
         /// </summary>
         public string BgImage { get; set; }
@@ -105,15 +101,6 @@ namespace TJADotNet
         Normal,
         Extra,
         Both
-    }
-
-    /// <summary>
-    /// 太鼓譜面か指譜面か
-    /// </summary>
-    public enum Games
-    {
-        Taiko,
-        Jube
     }
 
     /// <summary>

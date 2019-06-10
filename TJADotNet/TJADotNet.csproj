@@ -48,6 +48,7 @@
     <Compile Include="CourseInfo.cs" />
     <Compile Include="Format\Branches.cs" />
     <Compile Include="Format\Chips.cs" />
+    <Compile Include="Format\Measure.cs" />
     <Compile Include="Format\Notes.cs" />
     <Compile Include="Format\SENotes.cs" />
     <Compile Include="TJADotNet.cs" />
