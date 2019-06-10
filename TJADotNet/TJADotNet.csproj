@@ -41,7 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chart.cs" />
+    <Compile Include="ChartInfo.cs" />
     <Compile Include="Chip.cs" />
+    <Compile Include="Course.cs" />
+    <Compile Include="CourseInfo.cs" />
     <Compile Include="Format\Branches.cs" />
     <Compile Include="Format\Chips.cs" />
     <Compile Include="Format\Notes.cs" />
