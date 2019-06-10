@@ -391,7 +391,7 @@ namespace TJADotNet
                                     course.Info.Style = Styles.Double;
                                     break;
                                 default:
-                                    course.Info.Style = Styles.Double;
+                                    course.Info.Style = Styles.Single;
                                     break;
                             }
                         }
