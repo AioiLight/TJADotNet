@@ -893,7 +893,7 @@ namespace TJADotNet
         /// <param name="list">チップリスト。</param>
         /// <param name="index">インデックス。</param>
         /// <returns>小節番号。</returns>
-        public int GetBeforeMeasureFromList(List<Chip> list, int index)
+        public int GetBeforeMeasureFromList(IReadOnlyList<Chip> list, int index)
         {
             for (var i = index; i > 0; i--)
             {
@@ -902,7 +902,7 @@ namespace TJADotNet
                     return i;
                 }
             }
-            throw new Exception();
+            return 0;
         }
     }
 }
