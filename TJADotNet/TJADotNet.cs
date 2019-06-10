@@ -846,6 +846,43 @@ namespace TJADotNet
         public Chart Chart { get; private set; } = new Chart();
 
         /// <summary>
+        /// TJADotNetで扱う難易度はいくつあるのか。
+        /// </summary>
+        public static int Total_Difficulty
+        {
+            get
+            {
+                return Enum.GetNames(typeof(Courses)).Length;
+            }
+        }
+
+        /// <summary>
+        /// TJADotNetで扱う譜面分岐数はいくつあるのか。
+        /// </summary>
+        public static int Total_Branches
+        {
+            get
+            {
+                return Enum.GetNames(typeof(Branches)).Length;
+            }
+        }
+
+        /// <summary>
+        /// TJADotNetのバージョンを返します。
+        /// </summary>
+        public static string Version
+        {
+            get
+            {
+                var ver = "Ver.";
+                var asm = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+                // Ver.x.x
+                return ver + string.Format("{0}.{1}", asm.Major, asm.Minor);                
+            }
+        }
+
+
+        /// <summary>
         /// 改行。Unix環境でも常にCRLFとして扱う。
         /// </summary>
         private const string NewLine = "\r\n";
