@@ -32,10 +32,7 @@ namespace TJADotNet
             // 共通ヘッダを取り出して coursesに投げる。
             var commonHeader = splitedCourses[0];
             var courses = new string[splitedCourses.Length - 1];
-            for (int i = 0; i < courses.Length; i++)
-            {
-                courses[i] = splitedCourses[i + 1];
-            }
+            courses = splitedCourses.Skip(1).ToArray();
 
             // 共通ヘッダのパース
             Chart.CommonHeader = GetHeaderFromString(commonHeader);
