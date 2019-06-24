@@ -562,6 +562,8 @@ namespace TJADotNet
                     var branchBeforeTime = 0L;
                     var branchCount = 0;
                     var branchAfterMeasure = 0;
+                    var balloonIndex = 0;
+                    Chip rollBegin;
 
                     var bgm = new Chip();
                     bgm.ChipType = Chips.BGMStart;
@@ -621,6 +623,14 @@ namespace TJADotNet
                                     chip.Scroll = nowScroll;
                                     chip.BPM = nowBPM;
                                     chip.Measure = measureCount;
+
+                                    if (chip.NoteType == Notes.Balloon)
+                                    {
+                                        // ふうせん連打のノルマ
+                                        chip.RollCount = course.Info.Balloon[balloonIndex];
+                                        balloonIndex++;
+                                    }
+
 
                                     // ひとつ進める
                                     nowTime += timePerNotes;
