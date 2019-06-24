@@ -75,6 +75,10 @@ namespace TJADotNet
         /// 小節数。
         /// </summary>
         public int Measure { get; set; }
+        /// <summary>
+        /// 連打の終端。
+        /// </summary>
+        public Chip RollEnd { get; set; }
 
         public override string ToString()
         {

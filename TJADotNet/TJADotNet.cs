@@ -563,7 +563,7 @@ namespace TJADotNet
                     var branchCount = 0;
                     var branchAfterMeasure = 0;
                     var balloonIndex = 0;
-                    Chip rollBegin;
+                    Chip rollBegin = null;
 
                     var bgm = new Chip();
                     bgm.ChipType = Chips.BGMStart;
@@ -631,6 +631,22 @@ namespace TJADotNet
                                         balloonIndex++;
                                     }
 
+                                    if (chip.NoteType == Notes.Balloon || chip.NoteType == Notes.RollStart || chip.NoteType == Notes.ROLLStart)
+                                    {
+                                        // 連打
+                                        // 始点を記憶しておく
+                                        rollBegin = chip;
+                                    }
+
+                                    if (chip.NoteType == Notes.RollEnd)
+                                    {
+                                        // 連打終端
+                                        if (rollBegin != null)
+                                        {
+                                            rollBegin.RollEnd = chip;
+                                        }
+                                        rollBegin = null;
+                                    }
 
                                     // ひとつ進める
                                     nowTime += timePerNotes;
