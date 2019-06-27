@@ -808,8 +808,11 @@ namespace TJADotNet
                     }
                 }
                 parseTJA(course.Chip.Common, course.Measure.Common);
+                SENoteGenerator.GenerateSENotes(course.Chip.Common);
                 parseTJA(course.Chip.Player1, course.Measure.Player1);
+                SENoteGenerator.GenerateSENotes(course.Chip.Player1);
                 parseTJA(course.Chip.Player2, course.Measure.Player2);
+                SENoteGenerator.GenerateSENotes(course.Chip.Player2);
             }
 
         }
