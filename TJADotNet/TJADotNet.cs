@@ -601,7 +601,8 @@ namespace TJADotNet
                             measureChip.Time = nowTime;
                             measureChip.Scroll = nowScroll;
                             measureChip.BPM = nowBPM;
-                            measureChip.Measure = measureCount;
+                            measureChip.MeasureCount = measureCount;
+                            measureChip.Measure = nowMeasure;
                             // Listへ
                             list.Add(measureChip);
 
@@ -622,7 +623,8 @@ namespace TJADotNet
                                     chip.Time = nowTime;
                                     chip.Scroll = nowScroll;
                                     chip.BPM = nowBPM;
-                                    chip.Measure = measureCount;
+                                    chip.MeasureCount = measureCount;
+                                    chip.Measure = nowMeasure;
 
                                     if (chip.NoteType == Notes.Balloon)
                                     {
@@ -797,7 +799,7 @@ namespace TJADotNet
                                 chip.Branch = nowBranch;
                                 chip.Branching = branching;
                                 chip.Time = nowTime;
-                                chip.Measure = measureCount;
+                                chip.MeasureCount = measureCount;
 
                                 list.Add(chip);
                             }

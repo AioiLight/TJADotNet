@@ -74,7 +74,11 @@ namespace TJADotNet
         /// <summary>
         /// 小節数。
         /// </summary>
-        public int Measure { get; set; }
+        public int MeasureCount { get; set; }
+        /// <summary>
+        /// Measure。
+        /// </summary>
+        public Format.Measure Measure { get; set; }
         /// <summary>
         /// 連打の終端。
         /// </summary>
