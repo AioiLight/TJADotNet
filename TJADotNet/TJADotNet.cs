@@ -572,6 +572,7 @@ namespace TJADotNet
                     foreach (var measure in measures)
                     {
                         var nowMeasureNotes = 0;
+                        var measureAdded = false;
                         // まずはその小節にある音符数(空白含む)を調べる
                         foreach (var line in measure.Split(new string[] { NewLine }, StringSplitOptions.RemoveEmptyEntries))
                         {
@@ -592,22 +593,26 @@ namespace TJADotNet
 
                             if (!line.StartsWith("#"))
                             {
-                                //小節線
-                                var measureChip = new Chip();
-                                measureChip.ChipType = Chips.Measure;
-                                measureChip.IsHitted = false;
-                                measureChip.IsGoGoTime = gogoTime;
-                                measureChip.CanShow = true;
-                                measureChip.Scroll = nowScroll;
-                                measureChip.Branch = nowBranch;
-                                measureChip.Branching = branching;
-                                measureChip.Time = nowTime;
-                                measureChip.Scroll = nowScroll;
-                                measureChip.BPM = nowBPM;
-                                measureChip.MeasureCount = measureCount;
-                                measureChip.Measure = nowMeasure;
-                                // Listへ
-                                list.Add(measureChip);
+                                if (!measureAdded)
+                                {
+                                    //小節線
+                                    var measureChip = new Chip();
+                                    measureChip.ChipType = Chips.Measure;
+                                    measureChip.IsHitted = false;
+                                    measureChip.IsGoGoTime = gogoTime;
+                                    measureChip.CanShow = true;
+                                    measureChip.Scroll = nowScroll;
+                                    measureChip.Branch = nowBranch;
+                                    measureChip.Branching = branching;
+                                    measureChip.Time = nowTime;
+                                    measureChip.Scroll = nowScroll;
+                                    measureChip.BPM = nowBPM;
+                                    measureChip.MeasureCount = measureCount;
+                                    measureChip.Measure = nowMeasure;
+                                    // Listへ
+                                    list.Add(measureChip);
+                                    measureAdded = true;
+                                }
                                 // 音符
                                 foreach (var note in line)
                                 {
