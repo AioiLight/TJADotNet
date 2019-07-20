@@ -589,25 +589,25 @@ namespace TJADotNet
                             // わざわざ文字の度再計算させてるけど仕方ないな！
                             var timePerNotes = (long)(nowMeasure.GetRate() / nowBPM / nowMeasureNotes * 1000 * 1000.0);
 
-                            //小節線
-                            var measureChip = new Chip();
-                            measureChip.ChipType = Chips.Measure;
-                            measureChip.IsHitted = false;
-                            measureChip.IsGoGoTime = gogoTime;
-                            measureChip.CanShow = true;
-                            measureChip.Scroll = nowScroll;
-                            measureChip.Branch = nowBranch;
-                            measureChip.Branching = branching;
-                            measureChip.Time = nowTime;
-                            measureChip.Scroll = nowScroll;
-                            measureChip.BPM = nowBPM;
-                            measureChip.MeasureCount = measureCount;
-                            measureChip.Measure = nowMeasure;
-                            // Listへ
-                            list.Add(measureChip);
 
                             if (!line.StartsWith("#"))
                             {
+                                //小節線
+                                var measureChip = new Chip();
+                                measureChip.ChipType = Chips.Measure;
+                                measureChip.IsHitted = false;
+                                measureChip.IsGoGoTime = gogoTime;
+                                measureChip.CanShow = true;
+                                measureChip.Scroll = nowScroll;
+                                measureChip.Branch = nowBranch;
+                                measureChip.Branching = branching;
+                                measureChip.Time = nowTime;
+                                measureChip.Scroll = nowScroll;
+                                measureChip.BPM = nowBPM;
+                                measureChip.MeasureCount = measureCount;
+                                measureChip.Measure = nowMeasure;
+                                // Listへ
+                                list.Add(measureChip);
                                 // 音符
                                 foreach (var note in line)
                                 {
